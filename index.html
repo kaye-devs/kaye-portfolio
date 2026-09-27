@@ -1,0 +1,3848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kaye Ocbina — Creative Portfolio</title>
+
+<style>
+
+/* =========================================
+ROOT COLORS
+========================================= */
+
+:root{
+--strawberry:#D95C67;
+--strawberry-dark:#A83F4A;
+--strawberry-light:#F3C6C9;
+
+--matcha:#687A55;
+--matcha-dark:#43533A;
+--matcha-light:#DDE4D1;
+
+--cream:#F7F1E5;
+--ivory:#FFFDF7;
+
+--brown:#4A4037;
+--soft-brown:#776B60;
+
+--white:#FFFFFF;
+}
+
+
+/* =========================================
+RESET
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:85px;
+}
+
+body{
+background:var(--cream);
+color:var(--brown);
+font-family:Georgia,"Times New Roman",serif;
+line-height:1.6;
+padding-top:75px;
+}
+
+img{
+width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+h1,
+h2,
+h3{
+font-family:Georgia,"Times New Roman",serif;
+font-weight:700;
+letter-spacing:-2px;
+}
+
+.script{
+font-family:"Brush Script MT","Segoe Script",cursive;
+font-weight:normal;
+}
+
+.uppercase{
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+
+/* =========================================
+NAVIGATION
+========================================= */
+
+nav{
+width:100%;
+max-width:none;
+margin:0;
+padding:18px 5%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+position:fixed;
+top:0;
+left:0;
+
+z-index:9999;
+
+background:var(--matcha);
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 4px 20px rgba(67,83,58,.15);
+}
+
+.logo{
+font-family:Georgia,serif;
+font-size:19px;
+line-height:1;
+font-weight:bold;
+color:var(--cream);
+}
+
+.logo span{
+color:var(--strawberry-light);
+}
+
+.nav-links{
+display:flex;
+gap:32px;
+
+font-family:Arial,sans-serif;
+font-size:11px;
+
+text-transform:uppercase;
+letter-spacing:1.5px;
+}
+
+.nav-links a{
+position:relative;
+
+color:var(--cream);
+
+padding:8px 0;
+
+transition:color .3s ease;
+}
+
+.nav-links a::after{
+content:"";
+
+position:absolute;
+left:0;
+bottom:0;
+
+width:0;
+height:2px;
+
+background:var(--strawberry-light);
+
+transition:width .3s ease;
+}
+
+.nav-links a:hover{
+color:var(--strawberry-light);
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-button{
+background:var(--strawberry);
+
+color:white;
+
+padding:11px 22px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+font-size:11px;
+
+text-transform:uppercase;
+letter-spacing:1px;
+
+transition:all .3s ease;
+}
+
+.nav-button:hover{
+background:var(--strawberry-dark);
+transform:translateY(-2px);
+}
+
+
+/* =========================================
+PAGE SYSTEM
+========================================= */
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
+
+
+/* =========================================
+HERO
+========================================= */
+
+.hero{
+width:90%;
+max-width:1250px;
+
+min-height:590px;
+
+margin:auto;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+
+padding:50px 0;
+}
+
+.small-title{
+color:var(--matcha);
+
+font-family:Arial,sans-serif;
+font-size:12px;
+
+text-transform:uppercase;
+letter-spacing:3px;
+
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:clamp(65px,8vw,125px);
+
+line-height:.83;
+
+text-transform:uppercase;
+
+color:var(--strawberry-dark);
+}
+
+.hero h1 span{
+color:var(--matcha);
+}
+
+.hero-script{
+font-size:70px;
+
+color:var(--strawberry);
+
+margin-left:90px;
+margin-top:10px;
+}
+
+.hero-description{
+max-width:430px;
+
+margin:25px 0;
+
+font-family:Arial,sans-serif;
+font-size:13px;
+
+color:var(--soft-brown);
+}
+
+.hero-buttons{
+display:flex;
+
+gap:12px;
+
+align-items:center;
+}
+
+.primary-btn{
+background:var(--strawberry);
+
+color:white;
+
+padding:14px 25px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+font-size:11px;
+
+text-transform:uppercase;
+letter-spacing:1px;
+
+transition:all .3s ease;
+}
+
+.primary-btn:hover{
+background:var(--strawberry-dark);
+transform:translateY(-2px);
+}
+
+.secondary-btn{
+border:1px solid var(--matcha);
+
+padding:13px 24px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+font-size:11px;
+
+text-transform:uppercase;
+letter-spacing:1px;
+
+color:var(--matcha-dark);
+
+transition:all .3s ease;
+}
+
+.secondary-btn:hover{
+background:var(--matcha);
+color:white;
+}
+
+
+/* =========================================
+HERO IMAGE
+========================================= */
+
+.hero-visual{
+height:540px;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+}
+
+.hero-circle{
+position:absolute;
+
+width:480px;
+height:480px;
+
+background:var(--matcha-light);
+
+border-radius:50%;
+
+right:0;
+top:30px;
+}
+
+.hero-circle-two{
+position:absolute;
+
+width:260px;
+height:260px;
+
+background:var(--strawberry-light);
+
+border-radius:50%;
+
+bottom:10px;
+left:10px;
+}
+
+.hero-image{
+width:430px;
+height:500px;
+
+object-fit:cover;
+
+border-radius:210px 210px 20px 20px;
+
+position:relative;
+z-index:2;
+}
+
+
+/* =========================================
+ABOUT
+========================================= */
+
+.about{
+width:90%;
+max-width:1250px;
+
+margin:30px auto;
+
+background:var(--ivory);
+
+border-radius:35px;
+
+padding:35px;
+
+display:grid;
+
+grid-template-columns:35% 65%;
+
+gap:45px;
+
+align-items:center;
+}
+
+.about-image{
+height:300px;
+
+object-fit:cover;
+
+border-radius:25px;
+}
+
+.about-content{
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+}
+
+.about-text h2{
+color:var(--strawberry-dark);
+
+font-size:45px;
+
+line-height:1;
+
+margin-bottom:15px;
+}
+
+.about-text p{
+font-family:Arial,sans-serif;
+
+font-size:13px;
+
+color:var(--soft-brown);
+
+margin-bottom:12px;
+}
+
+.signature{
+font-size:40px;
+
+color:var(--matcha);
+
+margin-top:15px;
+}
+
+.services{
+border-left:1px solid #ddd4c6;
+
+padding-left:30px;
+}
+
+.service{
+display:flex;
+
+gap:14px;
+
+margin-bottom:18px;
+
+font-family:Arial,sans-serif;
+
+font-size:13px;
+}
+
+.service-icon{
+color:var(--strawberry);
+
+font-size:20px;
+}
+
+
+/* =========================================
+SELECTED WORKS
+========================================= */
+
+.projects{
+width:90%;
+max-width:1250px;
+
+margin:35px auto;
+
+background:var(--matcha);
+
+padding:35px;
+
+border-radius:35px;
+}
+
+.section-heading{
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+}
+
+.section-heading h2{
+color:var(--cream);
+
+font-size:42px;
+
+text-transform:uppercase;
+}
+
+.project-grid{
+display:grid;
+
+grid-template-columns:repeat(3,minmax(0,1fr));
+
+gap:15px;
+}
+
+
+/* =========================================
+CLICKABLE PROJECT CARDS
+========================================= */
+
+.project-card{
+
+background:var(--cream);
+
+border-radius:20px;
+
+padding:10px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+display:block;
+
+border:2px solid transparent;
+
+transition:
+transform .3s ease,
+box-shadow .3s ease,
+border-color .3s ease;
+}
+
+.project-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 15px 30px rgba(67,83,58,.25);
+
+border-color:var(--strawberry);
+}
+
+
+/* =========================================
+PROJECT BUTTON
+========================================= */
+
+.project-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+background:var(--strawberry);
+
+color:white;
+
+padding:11px 23px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+
+font-size:11px;
+
+font-weight:bold;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+margin-top:8px;
+
+transition:all .3s ease;
+}
+
+.project-button:hover{
+
+background:var(--strawberry-dark);
+
+transform:translateX(4px);
+}
+
+.project-button::after{
+content:"→";
+font-size:15px;
+}
+
+
+/* =========================================
+PROJECT IMAGE
+========================================= */
+
+.project-image{
+width:100%;
+
+height:260px;
+
+object-fit:cover;
+
+object-position:center;
+
+border-radius:15px;
+}
+
+
+/* =========================================
+STRAWBERRY IMAGE
+========================================= */
+
+.strawberry-image{
+
+width:100%;
+
+height:450px;
+
+object-fit:cover;
+
+object-position:center;
+
+border-radius:15px;
+
+display:block;
+}
+
+
+/* =========================================
+MAISON IMAGE
+========================================= */
+
+.maison-image{
+
+width:100%;
+
+height:450px;
+
+object-fit:cover;
+
+object-position:center;
+
+border-radius:15px;
+
+display:block;
+}
+
+
+/* =========================================
+PROJECT VIDEO
+========================================= */
+
+.project-video{
+
+width:100%;
+
+height:450px;
+
+overflow:hidden;
+
+border-radius:15px;
+
+background:var(--matcha-dark);
+
+position:relative;
+}
+
+.project-video video{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+}
+
+.project-video video::-webkit-media-controls-panel{
+
+background-image:linear-gradient(
+transparent,
+rgba(0,0,0,.65)
+);
+}
+
+
+/* =========================================
+PROJECT INFO
+========================================= */
+
+.project-info{
+
+padding:14px 7px 8px;
+
+text-align:left;
+}
+
+.project-category{
+
+font-family:Arial,sans-serif;
+
+font-size:9px;
+
+color:var(--matcha);
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+}
+
+.project-info h3{
+
+color:var(--strawberry-dark);
+
+font-size:25px;
+
+margin:5px 0;
+
+}
+
+.project-info p{
+
+font-family:Arial,sans-serif;
+
+font-size:10px;
+
+color:var(--soft-brown);
+
+margin-bottom:8px;
+}
+
+
+/* =========================================
+PORTFOLIO DETAIL PAGES
+========================================= */
+
+.portfolio-page{
+
+width:90%;
+
+max-width:1250px;
+
+margin:35px auto 60px;
+}
+
+.portfolio-header{
+
+background:var(--matcha);
+
+border-radius:35px;
+
+padding:35px;
+
+margin-bottom:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+}
+
+.portfolio-header h1{
+
+color:var(--cream);
+
+font-size:55px;
+
+text-transform:uppercase;
+
+line-height:.9;
+}
+
+.portfolio-header p{
+
+font-family:Arial,sans-serif;
+
+font-size:12px;
+
+color:var(--matcha-light);
+
+max-width:400px;
+}
+
+.back-button{
+
+display:inline-block;
+
+background:var(--strawberry);
+
+color:white;
+
+padding:12px 22px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+
+font-size:10px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+white-space:nowrap;
+
+transition:all .3s ease;
+}
+
+.back-button:hover{
+
+background:var(--strawberry-dark);
+
+transform:translateY(-2px);
+}
+
+
+/* =========================================
+IMAGE PORTFOLIO
+4 IMAGES
+========================================= */
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(4,minmax(0,1fr));
+
+gap:18px;
+}
+
+.image-project{
+
+background:var(--ivory);
+
+padding:10px;
+
+border-radius:22px;
+
+overflow:hidden;
+}
+
+.image-project img{
+
+width:100%;
+
+height:450px;
+
+object-fit:cover;
+
+object-position:center;
+
+border-radius:15px;
+}
+
+
+/* INDIVIDUAL IMAGE HEIGHT */
+
+.image-project:nth-child(1) img{
+height:450px;
+}
+
+.image-project:nth-child(2) img{
+height:450px;
+}
+
+.image-project:nth-child(3) img{
+height:450px;
+}
+
+.image-project:nth-child(4) img{
+height:450px;
+}
+
+
+/* =========================================
+VIDEO PORTFOLIO
+3 VIDEOS
+========================================= */
+
+.video-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:18px;
+}
+
+.video-project{
+
+background:var(--ivory);
+
+padding:10px;
+
+border-radius:22px;
+}
+
+.video-frame{
+
+width:100%;
+
+height:500px;
+
+background:var(--matcha-dark);
+
+border-radius:15px;
+
+overflow:hidden;
+}
+
+.video-frame video{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+}
+
+
+/* =========================================
+WEB PORTFOLIO
+3 LANDSCAPE VIDEOS
+========================================= */
+
+ .web-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+gap:18px;
+
+align-items:start;
+}
+
+.web-project{
+
+background:var(--ivory);
+
+padding:10px;
+
+border-radius:22px;
+
+overflow:hidden;
+}
+
+.web-frame{
+
+width:100%;
+
+height:380px;
+
+background:var(--matcha-dark);
+
+border-radius:15px;
+
+overflow:hidden;
+}
+
+.web-frame video{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+}
+
+
+/* =========================================
+CONTENT PORTFOLIO
+6 PORTRAIT VIDEOS
+========================================= */
+
+.content-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:18px;
+}
+
+.content-project{
+
+background:var(--ivory);
+
+padding:10px;
+
+border-radius:22px;
+}
+
+.content-frame{
+
+width:100%;
+
+height:600px;
+
+background:var(--matcha-dark);
+
+border-radius:15px;
+
+overflow:hidden;
+}
+
+.content-frame video{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+}
+
+
+/* =========================================
+MEDIA LABEL
+========================================= */
+
+.media-label{
+
+padding:12px 5px 5px;
+}
+
+.media-label h3{
+
+font-size:20px;
+
+color:var(--strawberry-dark);
+}
+
+.media-label p{
+
+font-family:Arial,sans-serif;
+
+font-size:10px;
+
+color:var(--soft-brown);
+}
+
+
+/* =========================================
+SERVICES + EXPERIENCE
+========================================= */
+
+.experience{
+
+width:90%;
+
+max-width:1250px;
+
+margin:35px auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+}
+
+.service-box,
+.numbers-box{
+
+background:var(--ivory);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+.service-box h2,
+.numbers-box h2{
+
+font-size:35px;
+
+color:var(--strawberry-dark);
+
+margin-bottom:25px;
+
+text-transform:uppercase;
+}
+
+.service-list{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:25px;
+}
+
+.service-item h3{
+
+font-size:17px;
+
+color:var(--matcha-dark);
+
+letter-spacing:-1px;
+}
+
+.service-item p{
+
+font-family:Arial,sans-serif;
+
+font-size:11px;
+
+color:var(--soft-brown);
+}
+
+.numbers{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+}
+
+.number-card{
+
+background:var(--strawberry-light);
+
+padding:22px;
+
+border-radius:20px;
+}
+
+.number-card:nth-child(even){
+
+background:var(--matcha-light);
+}
+
+.number{
+
+font-size:40px;
+
+font-weight:bold;
+
+color:var(--strawberry-dark);
+}
+
+.number-card:nth-child(even) .number{
+
+color:var(--matcha-dark);
+}
+
+.number-label{
+
+font-family:Arial,sans-serif;
+
+font-size:10px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+}
+
+
+/* =========================================
+TESTIMONIALS
+========================================= */
+
+.testimonials{
+
+width:90%;
+
+max-width:1250px;
+
+margin:35px auto;
+}
+
+.testimonials h2{
+
+font-size:42px;
+
+color:var(--matcha-dark);
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+}
+
+.testimonial-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:15px;
+}
+
+.testimonial{
+
+background:var(--ivory);
+
+padding:28px;
+
+border-radius:25px;
+}
+
+.quote{
+
+font-size:35px;
+
+color:var(--strawberry);
+}
+
+.testimonial p{
+
+font-family:Arial,sans-serif;
+
+font-size:12px;
+
+color:var(--soft-brown);
+
+margin:10px 0 20px;
+}
+
+.client{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+}
+
+.client-image{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+object-fit:cover;
+}
+
+.client-name{
+
+font-family:Arial,sans-serif;
+
+font-size:11px;
+
+font-weight:bold;
+}
+
+.client-role{
+
+font-family:Arial,sans-serif;
+
+font-size:9px;
+
+color:var(--soft-brown);
+}
+
+
+/* =========================================
+CTA
+========================================= */
+
+.cta{
+
+width:90%;
+
+max-width:1250px;
+
+margin:35px auto 50px;
+
+background:var(--strawberry-dark);
+
+color:var(--cream);
+
+border-radius:35px;
+
+padding:50px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+}
+
+.cta h2{
+
+font-size:clamp(50px,7vw,90px);
+
+line-height:.8;
+
+text-transform:uppercase;
+}
+
+.cta-script{
+
+font-size:55px;
+
+color:var(--strawberry-light);
+
+margin-left:100px;
+}
+
+.cta-right{
+
+max-width:300px;
+}
+
+.cta-right h3{
+
+font-size:25px;
+
+letter-spacing:-1px;
+
+margin-bottom:8px;
+}
+
+.cta-right p{
+
+font-family:Arial,sans-serif;
+
+font-size:12px;
+
+margin-bottom:20px;
+}
+
+.cta-button{
+
+display:inline-block;
+
+background:var(--cream);
+
+color:var(--strawberry-dark);
+
+padding:13px 23px;
+
+border-radius:30px;
+
+font-family:Arial,sans-serif;
+
+font-size:10px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+transition:all .3s ease;
+}
+
+.cta-button:hover{
+
+background:white;
+
+transform:translateY(-2px);
+}
+
+
+
+/* =========================================
+TOOLS I USE
+========================================= */
+.tools-section{
+    width:90%;
+    max-width:1250px;
+    margin:35px auto;
+    background:var(--ivory);
+    border-radius:35px;
+    padding:35px;
+}
+.tools-heading{margin-bottom:25px;}
+.tools-heading h2{
+    color:var(--strawberry-dark);
+    font-size:42px;
+    text-transform:uppercase;
+    line-height:1;
+}
+.tools-heading p{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:var(--soft-brown);
+    margin-top:8px;
+    max-width:500px;
+}
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:16px;
+}
+.tool-card{
+    min-height:135px;
+    background:var(--cream);
+    border:1px solid rgba(104,122,85,.15);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:18px 10px;
+    cursor:pointer;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),
+               box-shadow .35s ease,
+               border-color .35s ease,
+               background .35s ease;
+}
+.tool-card:hover{
+    transform:translateY(-9px) rotate(-2deg) scale(1.04);
+    background:var(--white);
+    border-color:var(--strawberry);
+    box-shadow:0 15px 30px rgba(67,83,58,.16);
+}
+.tool-image{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    margin-bottom:12px;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.tool-card:hover .tool-image{
+    transform:rotate(7deg) translateY(-4px) scale(1.12);
+}
+.tool-name{
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--matcha-dark);
+}
+.tool-card::after{
+    content:"";
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:var(--strawberry);
+    margin-top:8px;
+    opacity:.5;
+    transition:transform .3s ease,opacity .3s ease;
+}
+.tool-card:hover::after{
+    transform:scale(2);
+    opacity:1;
+}
+@media(max-width:900px){
+    .tools-grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+@media(max-width:600px){
+    .tools-section{padding:22px;}
+    .tools-heading h2{font-size:34px;}
+    .tools-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:10px;
+    }
+    .tool-card{
+        min-height:115px;
+        padding:14px 6px;
+        border-radius:16px;
+    }
+    .tool-image{
+        width:48px;
+        height:48px;
+        margin-bottom:9px;
+    }
+    .tool-name{
+        font-size:8px;
+        letter-spacing:.7px;
+    }
+}
+
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+
+width:90%;
+
+max-width:1250px;
+
+margin:auto;
+
+padding:0 0 30px;
+
+display:flex;
+
+justify-content:space-between;
+
+font-family:Arial,sans-serif;
+
+font-size:11px;
+
+color:var(--soft-brown);
+}
+
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+}
+
+.hero-content{
+padding-bottom:10px;
+}
+
+.hero-description{
+margin:25px auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-script{
+margin-left:0;
+}
+
+.hero-visual{
+height:450px;
+}
+
+.hero-circle{
+
+width:380px;
+
+height:380px;
+}
+
+.hero-image{
+
+width:330px;
+
+height:400px;
+}
+
+.about{
+
+grid-template-columns:1fr;
+}
+
+.project-grid{
+
+grid-template-columns:1fr 1fr;
+}
+
+.experience{
+
+grid-template-columns:1fr;
+}
+
+.cta{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:40px;
+}
+
+.image-gallery{
+
+grid-template-columns:1fr 1fr;
+}
+
+.video-gallery{
+
+grid-template-columns:1fr 1fr;
+}
+
+.content-gallery{
+
+grid-template-columns:1fr 1fr;
+}
+
+.portfolio-header{
+
+align-items:flex-start;
+
+flex-direction:column;
+}
+
+}
+
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+nav{
+
+padding:16px 5%;
+}
+
+.logo{
+
+font-size:17px;
+}
+
+.nav-button{
+
+display:none;
+}
+
+.hero h1{
+
+font-size:65px;
+}
+
+.hero-script{
+
+font-size:50px;
+}
+
+.about,
+.projects,
+.service-box,
+.numbers-box,
+.cta,
+.portfolio-header{
+
+padding:22px;
+}
+
+.about-content{
+
+grid-template-columns:1fr;
+}
+
+.services{
+
+border-left:none;
+
+border-top:1px solid #ddd4c6;
+
+padding-left:0;
+
+padding-top:25px;
+}
+
+.project-grid{
+
+grid-template-columns:1fr;
+}
+
+.service-list{
+
+grid-template-columns:1fr;
+}
+
+.testimonial-grid{
+
+grid-template-columns:1fr;
+}
+
+.cta h2{
+
+font-size:55px;
+}
+
+.cta-script{
+
+margin-left:30px;
+
+font-size:40px;
+}
+
+footer{
+
+flex-direction:column;
+
+gap:10px;
+}
+
+.strawberry-image{
+
+height:300px;
+}
+
+.maison-image{
+
+height:300px;
+}
+
+.image-gallery,
+.video-gallery,
+.content-gallery{
+
+grid-template-columns:1fr;
+}
+
+.portfolio-header h1{
+
+font-size:45px;
+}
+    .web-gallery{
+        grid-template-columns:1fr;
+    }
+
+
+.web-frame{
+
+height:300px;
+}
+
+.video-frame{
+
+height:500px;
+}
+
+.content-frame{
+
+height:600px;
+}
+
+}
+
+
+/* FINAL PORTFOLIO LAYOUT FIX */
+@media(min-width:901px){
+  .project-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .image-gallery{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+  .image-project img{
+    height:420px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+NAVIGATION
+========================================= -->
+
+<nav>
+
+<div class="logo">
+
+KAYE<br>
+
+<span>OCBINA</span>
+
+</div>
+
+
+<div class="nav-links">
+
+<a href="#work">Work</a>
+
+<a href="#services">Services</a>
+
+<a href="#about">About</a>
+
+<a href="#experience">Experience</a>
+
+</div>
+
+
+<a href="#contact" class="nav-button">
+
+Let's Create
+
+</a>
+
+</nav>
+
+
+
+<!-- =========================================
+HOME PAGE
+========================================= -->
+
+<main id="homePage" class="page active">
+
+
+<!-- =========================================
+HERO
+========================================= -->
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+<div class="small-title">
+
+Creative Studio · Portfolio
+
+</div>
+
+
+<h1>
+
+Creative<br>
+
+Work
+
+<span>That</span>
+
+</h1>
+
+
+<div class="hero-script script">
+
+feels timeless
+
+</div>
+
+
+<p class="hero-description">
+
+I create thoughtful visual experiences, digital content,
+brand identities and social media designs that connect
+brands with the people they want to reach.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#work" class="primary-btn">
+
+View My Work →
+
+</a>
+
+
+<a href="#about" class="secondary-btn">
+
+About Me
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-visual">
+
+<div class="hero-circle"></div>
+
+<div class="hero-circle-two"></div>
+
+
+<img
+
+src="cover.png"
+
+alt="Kaye Ocbina"
+
+class="hero-image"
+
+>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+ABOUT
+========================================= -->
+
+<section class="about" id="about">
+
+
+<img
+
+src="kaye.png"
+
+alt="Creative workspace"
+
+class="about-image"
+
+>
+
+
+<div class="about-content">
+
+
+<div class="about-text">
+
+
+<h2>
+
+Hi, I'm<br>
+
+Kaye Ocbina.
+
+</h2>
+
+
+<p>
+
+I'm a creative professional and digital support specialist
+passionate about design, content creation, social media,
+and building digital experiences that feel intentional,
+functional, and memorable.
+
+</p>
+
+
+<p>
+
+I combine creative thinking with customer experience,
+operations, and web development to help brands communicate
+better, stay organized, and create meaningful digital
+experiences.
+
+</p>
+
+
+<div class="signature script">
+
+Kaye
+
+</div>
+
+</div>
+
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-icon">✦</div>
+
+<div><strong>Brand Identity</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◉</div>
+
+<div><strong>Social Media</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">✧</div>
+
+<div><strong>Graphic Design</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◇</div>
+
+<div><strong>Content Creation</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">✦</div>
+
+<div><strong>Video Editing</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◉</div>
+
+<div><strong>Creative Direction</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">✧</div>
+
+<div><strong>Customer Experience</strong></div>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◇</div>
+
+<div><strong>HTML & Web Development</strong></div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+SELECTED WORKS
+CLICKABLE BUTTONS
+========================================= -->
+
+<section class="projects" id="work">
+
+
+<div class="section-heading">
+
+<h2>
+
+Selected Works
+
+</h2>
+
+</div>
+
+
+
+<div class="project-grid">
+
+
+
+<!-- =========================================
+IMAGE
+========================================= -->
+
+<a href="#imagePage" class="project-card">
+
+
+<img
+
+src="k.png"
+
+alt="Image Portfolio"
+
+class="strawberry-image"
+
+>
+
+
+<div class="project-info">
+
+
+<div class="project-category">
+
+Branding · Graphic Design
+
+</div>
+
+
+<h3>
+
+Image
+
+</h3>
+
+
+<p>
+
+Explore my visual design, branding and graphic design projects.
+
+</p>
+
+
+<span class="project-button">
+
+View Image Portfolio
+
+</span>
+
+
+</div>
+
+</a>
+
+
+<!-- =========================================
+WEB
+========================================= -->
+
+<a href="#webPage" class="project-card">
+
+
+<img
+
+src="web.png"
+
+alt="Web Portfolio"
+
+class="maison-image"
+
+>
+
+
+<div class="project-info">
+
+
+<div class="project-category">
+
+Digital Design · Business
+
+</div>
+
+
+<h3>
+
+Web
+
+</h3>
+
+
+<p>
+
+Explore my website designs, web development and digital experiences.
+
+</p>
+
+
+<span class="project-button">
+
+View Web Portfolio
+
+</span>
+
+
+</div>
+
+</a>
+
+
+
+<!-- =========================================
+CONTENT
+========================================= -->
+
+<a href="#contentPage" class="project-card">
+
+
+<div class="project-video">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+poster="sunnies.png"
+
+>
+
+<source
+
+src="sunnies.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="project-info">
+
+
+<div class="project-category">
+
+Branding · Social Media · Business
+
+</div>
+
+
+<h3>
+
+Content
+
+</h3>
+
+
+<p>
+
+Explore my original content created for brands and social media.
+
+</p>
+
+
+<span class="project-button">
+
+View Content Portfolio
+
+</span>
+
+
+</div>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+SERVICES + EXPERIENCE
+========================================= -->
+
+<section class="experience" id="services">
+
+
+<div class="service-box">
+
+
+<h2>
+
+My Services
+
+</h2>
+
+
+<div class="service-list">
+
+
+<div class="service-item">
+
+<h3>Brand Identity</h3>
+
+<p>
+
+Logo, visual systems and brand direction.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Social Media</h3>
+
+<p>
+
+Content planning, graphics and strategy.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Graphic Design</h3>
+
+<p>
+
+Beautiful visuals designed with intention.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Content Creation</h3>
+
+<p>
+
+Engaging content for modern platforms.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Video Editing</h3>
+
+<p>
+
+Short-form videos and social content.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Creative Direction</h3>
+
+<p>
+
+Visual concepts and campaign direction.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>Customer Experience</h3>
+
+<p>
+
+Building positive customer interactions
+through responsive support and solutions.
+
+</p>
+
+</div>
+
+
+<div class="service-item">
+
+<h3>HTML & Web Development</h3>
+
+<p>
+
+Building clean, responsive, and functional websites.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="numbers-box" id="experience">
+
+
+<h2>
+
+Experience<br>
+
+By The Numbers
+
+</h2>
+
+
+<div class="numbers">
+
+
+<div class="number-card">
+
+<div class="number">
+
+4+
+
+</div>
+
+<div class="number-label">
+
+Years Experience
+
+</div>
+
+</div>
+
+
+<div class="number-card">
+
+<div class="number">
+
+7+
+
+</div>
+
+<div class="number-label">
+
+Projects Completed
+
+</div>
+
+</div>
+
+
+<div class="number-card">
+
+<div class="number">
+
+7+
+
+</div>
+
+<div class="number-label">
+
+Happy Clients
+
+</div>
+
+</div>
+
+
+<div class="number-card">
+
+<div class="number">
+
+3+
+
+</div>
+
+<div class="number-label">
+
+Industries Served
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- =========================================
+TOOLS I USE
+========================================= -->
+
+<section class="tools-section">
+
+<div class="tools-heading">
+<h2>Tools I Use</h2>
+<p>
+The creative, design, editing, productivity and
+web development tools I use to bring ideas to life.
+</p>
+</div>
+
+<div class="tools-grid">
+
+<div class="tool-card">
+<img src="g.webp" alt="Canva" class="tool-image">
+<div class="tool-name">Canva</div>
+</div>
+
+<div class="tool-card">
+<img src="f.jpg" alt="CapCut" class="tool-image">
+<div class="tool-name">CapCut</div>
+</div>
+
+<div class="tool-card">
+<img src="d.webp" alt="Adobe Photoshop" class="tool-image">
+<div class="tool-name">Photoshop</div>
+</div>
+
+<div class="tool-card">
+<img src="s.webp" alt="Adobe Premiere Pro" class="tool-image">
+<div class="tool-name">Premiere Pro</div>
+</div>
+
+<div class="tool-card">
+<img src="m.webp" alt="Claude" class="tool-image">
+<div class="tool-name">Claude</div>
+</div>
+
+<div class="tool-card">
+<img src="b.webp" alt="Notion" class="tool-image">
+<div class="tool-name">Notion</div>
+</div>
+
+<div class="tool-card">
+<img src="n.jpg" alt="ChatGPT" class="tool-image">
+<div class="tool-name">JavaScript</div>
+</div>
+
+<div class="tool-card">
+<img src="v.jpg" alt="Supabase" class="tool-image">
+<div class="tool-name">Supabase</div>
+</div>
+
+<div class="tool-card">
+<img src="c.webp" alt="GitHub" class="tool-image">
+<div class="tool-name">GitHub</div>
+</div>
+
+<div class="tool-card">
+<img src="x.webp" alt="Slack" class="tool-image">
+<div class="tool-name">Slack</div>
+</div>
+
+<div class="tool-card">
+<img src="z.webp" alt="Google Workspace" class="tool-image">
+<div class="tool-name">Google Workspace</div>
+</div>
+
+<div class="tool-card">
+<img src="a.jpg" alt="GoHighLevel" class="tool-image">
+<div class="tool-name">GoHighLevel</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- =========================================
+TESTIMONIALS
+========================================= -->
+
+<section class="testimonials">
+
+
+<h2>
+
+What Clients Say
+
+</h2>
+
+
+<div class="testimonial-grid">
+
+
+<div class="testimonial">
+
+
+<div class="quote">
+
+“
+
+</div>
+
+
+<p>
+
+I thought she did a very good job scheduling the call.
+It sounded like they already had an established relationship,
+which was solid. Just to highlight the point, I liked how she
+handled the GPR enrollment with a quick, impactful sales pitch—
+it’s free, it’s fast. I appreciated hearing that because it
+helps the whole company. I really liked how she asked about
+their role in the company (travel manager, coordinator, finance,
+procurement, etc.). Throughout the entire interaction, I felt
+like Kaye was there to help every step of the way.
+
+</p>
+
+
+<div class="client">
+
+
+<img
+
+src="client-1.png"
+
+alt="Client"
+
+class="client-image"
+
+>
+
+
+<div>
+
+
+<div class="client-name">
+
+Tyler H.
+
+</div>
+
+
+<div class="client-role">
+
+Senior Director of Commercial Strategy
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="testimonial">
+
+
+<div class="quote">
+
+“
+
+</div>
+
+
+<p>
+
+Professional, creative and incredibly
+easy to work with. The attention to detail
+was exactly what we needed.
+
+</p>
+
+
+<div class="client">
+
+
+<img
+
+src="carl.jpg"
+
+alt="Client"
+
+class="client-image"
+
+>
+
+
+<div>
+
+
+<div class="client-name">
+
+Carl Daniel B.
+
+</div>
+
+
+<div class="client-role">
+
+CEO and Creative Director (Frameless)
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="testimonial">
+
+
+<div class="quote">
+
+“
+
+</div>
+
+
+<p>
+
+The attention to detail and design quality
+completely elevated our brand presence.
+
+</p>
+
+
+<div class="client">
+
+
+<img
+
+src="images/client-3.jpg"
+
+alt="Client"
+
+class="client-image"
+
+>
+
+
+<div>
+
+
+<div class="client-name">
+
+Sophia L.
+
+</div>
+
+
+<div class="client-role">
+
+Business Owner
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+CTA
+========================================= -->
+
+<section class="cta" id="contact">
+
+
+<div>
+
+
+<h2>
+
+Let's Build
+
+</h2>
+
+
+<div class="cta-script script">
+
+something beautiful
+
+</div>
+
+
+</div>
+
+
+<div class="cta-right">
+
+
+<h3>
+
+Have a project in mind?
+
+</h3>
+
+
+<p>
+
+I'd love to hear about your idea and
+explore how we can bring it to life.
+
+</p>
+
+
+<a
+
+href="mailto:kay.ocbina@gmail.com"
+
+class="cta-button"
+
+>
+
+Get In Touch →
+
+</a>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+IMAGE PAGE
+4 IMAGES
+========================================= -->
+
+<main id="imagePage" class="page">
+
+
+<section class="portfolio-page">
+
+
+<div class="portfolio-header">
+
+
+<div>
+
+
+<h1>
+
+Image
+
+</h1>
+
+
+<p>
+
+A collection of visual design, branding,
+graphic design and creative projects.
+
+</p>
+
+
+</div>
+
+
+<a href="#work" class="back-button">
+
+← Back to Selected Works
+
+</a>
+
+
+</div>
+
+
+
+<div class="image-gallery">
+
+
+
+<div class="image-project">
+
+<img
+
+src="organix.png"
+
+alt="Image Project 1"
+
+>
+
+<div class="media-label">
+
+<h3>Luxe Organix</h3>
+
+<p>Brand Campaign</p>
+
+</div>
+
+</div>
+
+
+
+<div class="image-project">
+
+<img
+
+src="l.png"
+
+alt="Image Project 2"
+
+>
+
+<div class="media-label">
+
+<h3>For Carousel</h3>
+
+<p>Social Media</p>
+
+</div>
+
+</div>
+
+
+
+<div class="image-project">
+
+<img
+
+src="vicks.png"
+
+alt="Image Project 3"
+
+>
+
+<div class="media-label">
+
+<h3>Vicks</h3>
+
+<p>Brand Campaign</p>
+
+</div>
+
+</div>
+
+
+
+<div class="image-project">
+
+<img
+
+src="bench.png"
+
+alt="Image Project 4"
+
+>
+
+<div class="media-label">
+
+<h3>Baby Bench</h3>
+
+<p>Brand Campaign</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================
+VIDEO PAGE
+3 VIDEOS
+========================================= -->
+
+<main id="videoPage" class="page">
+
+
+<section class="portfolio-page">
+
+
+<div class="portfolio-header">
+
+
+<div>
+
+
+<h1>
+
+Video
+
+</h1>
+
+
+<p>
+
+Creative video editing, promotional videos
+and social media video content.
+
+</p>
+
+
+</div>
+
+
+<a href="#work" class="back-button">
+
+← Back to Selected Works
+
+</a>
+
+
+</div>
+
+
+
+<div class="video-gallery">
+
+
+
+<div class="video-project">
+
+
+<div class="video-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="video-1.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Video 01</h3>
+
+<p>Video Editing</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="video-project">
+
+
+<div class="video-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="video-2.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Video 02</h3>
+
+<p>Social Media Video</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="video-project">
+
+
+<div class="video-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="video-3.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Video 03</h3>
+
+<p>Creative Video</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================
+WEB PAGE
+3 LANDSCAPE VIDEOS
+========================================= -->
+
+<main id="webPage" class="page">
+
+
+<section class="portfolio-page">
+
+
+<div class="portfolio-header">
+
+
+<div>
+
+
+<h1>
+
+Web
+
+</h1>
+
+
+<p>
+
+Website concepts, digital experiences and
+responsive web design projects.
+
+</p>
+
+
+</div>
+
+
+<a href="#work" class="back-button">
+
+← Back to Selected Works
+
+</a>
+
+
+</div>
+
+
+
+<div class="web-gallery">
+
+
+
+<div class="web-project">
+
+
+<div class="web-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="web-1.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Letters Through Six Months — A Personal Digital Diary</h3>
+
+<p>A personal interactive journal website built as a digital space for love, memories, and connection during my partner’s six-month Police Training. Designed to document everyday moments, thoughts, letters, photos, and memories while we’re apart, the website also gives him a private space to send messages and share media back with me.</p>
+
+<p>Built with HTML, CSS, JavaScript, Supabase, and GitHub, the project features user authentication, journal entries, a digital scrapbook, photo/video memories, a countdown, and a two-way messaging system. The goal was to create something more personal than a traditional website—a living diary that allows us to stay connected throughout the six months.</p>
+
+<p>Tech Stack: HTML5 • CSS3 • JavaScript • Supabase • GitHub • Responsive Web Design</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="web-project">
+
+
+<div class="web-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="web-2.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Frameless — One Click Away</h3>
+
+<p>A modern business website designed as a digital portfolio and interactive package viewer for Frameless, a photography and videography service provider. The website gives customers an easy and visually engaging way to explore available photography and videography packages, compare services, and find the package that best fits their event.</p>
+
+<p>The website organizes services into clear categories such as Birthday, Debut, Christening, Wedding, and Portrait Session, with each category featuring Package A, Package B, and Package C and their corresponding inclusions and pricing. Customers can simply select a category to view the available packages without having to browse through a long page.</p>
+
+<p>The design was developed with a clean, elegant, photography-focused aesthetic that highlights Frameless' visual identity while keeping the user experience simple and accessible. The website is also designed to be responsive across desktop and mobile devices, allowing potential clients to browse packages conveniently from their phones.</p>
+
+<p>Tech Stack: HTML5 • CSS3 • JavaScript • Responsive Web Design</p>
+
+<p>Project Type: Business Website • Service Portfolio • Interactive Package Viewer</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================
+CONTENT PAGE
+6 PORTRAIT VIDEOS
+========================================= -->
+
+<main id="contentPage" class="page">
+
+
+<section class="portfolio-page">
+
+
+<div class="portfolio-header">
+
+
+<div>
+
+
+<h1>
+
+Content & Video
+
+</h1>
+
+
+<p>
+
+Original content created for brands,
+social media and digital platforms.
+
+</p>
+
+
+</div>
+
+
+<a href="#work" class="back-button">
+
+← Back to Selected Works
+
+</a>
+
+
+</div>
+
+
+
+<div class="content-gallery">
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="jmcy.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>JMCY</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="shedella.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>SheDella</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="book.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>tuesdays with Morrie</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="luxe.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Luxe Organix</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="her.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Her</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="content-project">
+
+
+<div class="content-frame">
+
+
+<video
+
+controls
+
+playsinline
+
+preload="metadata"
+
+>
+
+<source
+
+src="blk.mp4"
+
+type="video/mp4"
+
+>
+
+Your browser does not support the video tag.
+
+</video>
+
+
+</div>
+
+
+<div class="media-label">
+
+<h3>Sheglam</h3>
+
+<p>Social Media Content</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+
+<div>
+
+© 2026 Kaye Ocbina
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =========================================
+JAVASCRIPT
+PAGE NAVIGATION
+========================================= -->
+
+<script>
+
+
+function showPage(){
+
+const hash = window.location.hash;
+
+const pages = document.querySelectorAll(".page");
+
+
+/* Hide every page */
+
+pages.forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+
+/* Portfolio detail pages */
+
+if(
+
+hash === "#imagePage" ||
+
+hash === "#videoPage" ||
+
+hash === "#webPage" ||
+
+hash === "#contentPage"
+
+){
+
+const selectedPage = document.querySelector(hash);
+
+
+if(selectedPage){
+
+selectedPage.classList.add("active");
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+}
+
+
+/* Home page */
+
+else{
+
+const homePage = document.getElementById("homePage");
+
+homePage.classList.add("active");
+
+
+/* Scroll to section */
+
+if(hash){
+
+setTimeout(function(){
+
+const target = document.querySelector(hash);
+
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+}
+
+},50);
+
+}
+
+}
+
+}
+
+
+/* Run when hash changes */
+
+window.addEventListener(
+
+"hashchange",
+
+showPage
+
+);
+
+
+/* Run when page loads */
+
+window.addEventListener(
+
+"load",
+
+showPage
+
+);
+
+
+/* =========================================
+SELECTED WORKS + VIDEO DISPLAY FIX
+========================================= */
+
+/* Make the whole Selected Works card open its portfolio page. */
+document.querySelectorAll(".project-card").forEach(function(card){
+  card.addEventListener("click",function(event){
+    if(event.target.closest("video")){
+      return;
+    }
+    const href = card.getAttribute("href");
+    if(href){
+      window.location.hash = href.substring(1);
+    }
+  });
+});
+
+/* Keep preview-video controls clickable without triggering the card. */
+document.querySelectorAll(".project-card video").forEach(function(video){
+  video.addEventListener("click",function(event){
+    event.stopPropagation();
+  });
+});
+
+/* Reload portfolio videos after switching to a detail page. */
+function refreshPortfolioVideos(){
+  document.querySelectorAll("#videoPage video, #contentPage video, #webPage video").forEach(function(video){
+    video.load();
+  });
+}
+
+window.addEventListener("load", refreshPortfolioVideos);
+window.addEventListener("hashchange", function(){
+  if(window.location.hash === "#videoPage" || window.location.hash === "#contentPage" || window.location.hash === "#webPage"){
+    setTimeout(refreshPortfolioVideos, 100);
+  }
+});
+
+</script>
+
+
+</body>
+</html>
